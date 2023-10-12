@@ -1,0 +1,120 @@
+<!--
+    Programa: Validador de senha
+    Descrição:
+
+    O programa recebe uma senha e verifica se ela é válida ou não. A senha deverá
+    seguir padrões para ser considerada de um nivel Forte, Moderada ou Fraca.
+    O validador mostra em tempo real o nível de segurança da senha digitada.
+
+    O programa sorteia um número aleatório entre 0 e 10, o usuário tem então até
+    3 chanches para tentar descobrir o número, caso erre nas 3 tentativas o jogo
+    se encerra e o usuário perde o jogo. A cada tentativa o programa dá uma dica
+    se o número apostado é menor ou maior do que o número oculto.
+    Autor: Joniclei B. Jr
+    Data: 12.10.2023
+
+    Histórico de Alterações:
+     V |   Data   | Autor/Descrição
+    ----------------------------------------------------------------------------
+     0 | 12.10.23 | Joniclei B. Jr - Versão inicial
+       |          | Criação do Programa
+    ----------------------------------------------------------------------------
+
+-->
+
+<!-- Análise (Rascunho...)
+-----------------
+    entradas:
+    - Titulo do programa
+    - 1 input para digitar
+    - Estilizacao da pagina
+
+    processamento:
+    - input com tipo password para esconder a senha
+    - adquirir o valor digitado
+    - verifica até 5 pontos,sendo if para cada ponto
+    - soma cada ponto
+    - resultado em tempo real usando input na funcao
+    - mudei o input para keydown para que o resultado seja em tempo real
+    - usado um output para mostrar o resultado temporiamente.
+
+    saídas:
+    se o recebido foi aumentando os caracteres ele vai somando os pontos respecitavamente como a regra
+    os comentarios no codigo explicam melhor o que cada parte faz
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <title>Validador de senha</title>
+</head>
+
+<body>
+    <header>
+        <div id="espacoSemNav"> </div>
+    </header>
+    <main>
+        <div class="centraOlho">
+
+            <div class="formDaSenha">
+                <form class="formSenha" action="">
+
+                    <div class="inputSenha">
+                        <h1>Verificar força de senha</h1>
+                        <input type="password" id="inputSenha">
+                        <output id="result"></output>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const recebendoSenha = document.querySelector('#inputSenha');
+        const result = document.querySelector('#result');
+
+        recebendoSenha.addEventListener('input',function(){
+            let pontos = 0;
+            const senha = recebendoSenha.value;
+            //Se a senha tiver mais de 1 caractere - 1 ponto;
+            if(senha.length > 1){
+                pontos++;
+            }
+            //Se a senha tiver mais de 6 caracteres - 1 ponto;
+            if(senha.length > 6){
+                pontos++;
+            }
+            //Se a senha tiver 10 ou maiscaracteres - 1 ponto;
+            if(senha.length >=10){
+                pontos++;
+            }
+            //Se a senha tiver 12 ou mais caracteres - 1 ponto;
+            if(senha.length >= 12){
+                pontos++;
+            }
+            //Se a senha tiver 14 ou mais caracteres - 1 ponto;
+            if(senha.length >= 14){
+                pontos++;
+            }
+
+            result.textContent = pontos;
+        }
+        )
+
+
+    </script>
+
+
+
+    <footer></footer>
+</body>
+
+</html>
+
