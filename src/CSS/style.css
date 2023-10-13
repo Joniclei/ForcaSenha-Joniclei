@@ -20,7 +20,8 @@ body {
   margin: 0 auto;
   width: 300px;
   height:300px;
-  background-image: url("../IMG/giphyOlho.gif");
+  background-image: url("../IMG/giphyOlho.gif") ;
+  opacity: 0.8;
   background-size: cover;
   display: flex;
   justify-content: center; /* Centraliza horizontalmente */
@@ -30,11 +31,11 @@ body {
 
 
 :root {
-  --cor-fraca: rgba(255, 0, 0, 0.729);
+  --cor-fraca: rgba(255, 0, 0, 0.208);
 
-  --cor-moderada: rgba(221, 255, 0, 0.649);
+  --cor-moderada: rgba(221, 255, 0, 0.208);
 
-  --cor-forte: rgba(0, 255, 4, 0.649);
+  --cor-forte: rgba(0, 255, 4, 0.208);
 
   --cor-da-borda: black;
 }
@@ -73,7 +74,7 @@ h1 {
 }
 
 .inputSenha {
-  margin-top: 30px;
+  margin-top: 120px;
   border-top: 40px;
 
 
