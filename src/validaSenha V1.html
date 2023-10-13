@@ -1,0 +1,169 @@
+<!--
+    Programa: Validador de senha
+    Descrição:
+
+    O programa recebe uma senha e verifica se ela é válida ou não. A senha deverá
+    seguir padrões para ser considerada de um nivel Forte, Moderada ou Fraca.
+    O validador mostra em tempo real o nível de segurança da senha digitada.
+
+    Autor: Joniclei B. Jr
+    Data: 12.10.2023
+
+    Histórico de Alterações:
+     V |   Data   | Autor/Descrição
+    ----------------------------------------------------------------------------
+     0 | 12.10.23 | Joniclei B. Jr - Versão inicial
+       |          | Criação do Programa
+    ----------------------------------------------------------------------------
+     1 | 12.10.23 | Joniclei B. Jr - Versão inicia
+       |          | Correcao na parte de backspace foi tentado fazer com
+       |          | validacao numerica atraves do unicode(backspace que é 8)
+       |          | mas nao deu certo, entao foi feito uma validacao repetida,
+       |          | finalizado o style passado validacao.
+    ----------------------------------------------------------------------------
+
+
+-->
+
+<!-- Análise (Rascunho...)
+-----------------
+    entradas:
+    - Titulo do programa
+    - 1 input para digitar
+    - Estilizacao da pagina
+
+    processamento:
+    - input com tipo password para esconder a senha
+    - adquirir o valor digitado
+    - verifica até 5 pontos,sendo if para cada ponto
+    - soma cada ponto
+    - resultado em tempo real usando input na funcao
+    - mudei o input para keydown para que o resultado seja em tempo real
+    - usado um output para mostrar o resultado temporiamente.
+
+    saídas:
+    se o recebido foi aumentando os caracteres ele vai somando os pontos respecitavamente como a regra
+    os comentarios no codigo explicam melhor o que cada parte faz
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <title>Validador de senha</title>
+</head>
+
+<body>
+    <header>
+        <div id="espacoSemNav"> </div>
+    </header>
+    <main>
+        <div class="centraOlho">
+
+            <div id="formDaSenha">
+                <form class="formSenha" action="">
+
+                    <div class="inputSenha">
+                        <h1>Verificar força de senha</h1>
+                        <input type="text" id="inputSenha">
+                    </div>
+                    <div>
+                        <input id="result" class="resultado"></input>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const recebendoSenha = document.querySelector('#inputSenha');
+
+        const formDaSenha = document.querySelector('#formDaSenha');
+
+
+        recebendoSenha.addEventListener('input', function () {
+            const result = document.querySelector('#result');
+
+            let pontos = 0;
+
+            let validacaoNumerica = 'a';
+
+            const recebendoValue = recebendoSenha.value;
+
+            for (let i = 0; i < recebendoSenha.value.length; i++) {
+
+                const senha = recebendoValue[i];
+
+                const result = document.querySelector('#result');
+
+                const unicode = Number(senha.charCodeAt(0));
+
+                //console.log("pontos", senha.length)
+                // aqui mesmo sendo maior que 1 eu coloquei 1 pois i sao dois 2 i0 e i1
+                if (i == 1) {
+                    pontos++;
+                    console.log("pontos 2", pontos)
+                }
+                if (i == 6) {
+                    pontos++;
+                    console.log("pontos 7", pontos)
+                }
+                if (i == 9) {
+                    pontos++;
+                    console.log("pontos 10", pontos)
+                }
+                if (i == 11) {
+                    pontos++;
+                    console.log("pontos 12", pontos)
+                }
+                if (i == 13) {
+                    pontos++;
+                    console.log("pontos 14", pontos)
+                }
+                if (unicode >= 48 && unicode <= 57 && validacaoNumerica == 'a') {
+                    pontos++;
+                    console.log("pontos numero", pontos)
+                    validacaoNumerica = 'b';
+                }
+            }
+            if (pontos > 3) {
+                formDaSenha.style.backgroundColor = 'var(--cor-forte)';
+                result.value =  "Forte";
+            } else if (pontos > 2) {
+                formDaSenha.style.backgroundColor = 'var(--cor-moderada)';
+                result.value =  "Moderada";
+            } else {
+                formDaSenha.style.backgroundColor = 'var(--cor-fraca)';
+                result.value =  "Fraca";
+            }
+
+            console.log("finalera", pontos);
+
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+    <footer></footer>
+</body>
+
+</html>

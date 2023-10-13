@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Over+the+Rainbow&display=swap');
 
 :root {
-  --cor-amarelo: rgba(136, 151, 41, 0.649);
+  --cor-fraca: rgba(255, 0, 0, 0.729);
+
+  --cor-moderada: rgba(221, 255, 0, 0.649);
+
+  --cor-forte: rgba(0, 255, 4, 0.649);
+
   --cor-da-borda: black;
 }
 
@@ -31,11 +36,11 @@ body {
 
 }
 
-.formDaSenha {
+#formDaSenha {
 
   height: 97%;
   width: 100%;
-  background-color: var(--cor-amarelo);
+  background-color: var(--cor-fraca);
   margin: 0 auto;
   border: 3px dotted rgba(0, 0, 0, 0.5);
   border-radius: 100%;
@@ -80,4 +85,8 @@ input {
   font-size: 30px;
   color: rgb(255, 255, 255);
   outline: none;
+}
+.resultado{
+  border: 0px;
+  text-align: center;
 }
