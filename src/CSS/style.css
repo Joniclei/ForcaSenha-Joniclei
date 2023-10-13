@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Over+the+Rainbow&display=swap');
 
-:root {
-  --cor-fraca: rgba(255, 0, 0, 0.729);
 
-  --cor-moderada: rgba(221, 255, 0, 0.649);
-
-  --cor-forte: rgba(0, 255, 4, 0.649);
-
-  --cor-da-borda: black;
-}
 
 
 body {
@@ -34,6 +26,17 @@ body {
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center;
 
+}
+
+
+:root {
+  --cor-fraca: rgba(255, 0, 0, 0.729);
+
+  --cor-moderada: rgba(221, 255, 0, 0.649);
+
+  --cor-forte: rgba(0, 255, 4, 0.649);
+
+  --cor-da-borda: black;
 }
 
 #formDaSenha {
