@@ -21,4 +21,4 @@ Total de pontos possíveis: 10.
 - A senha será considerada "Moderada" se somar mais de 5 e menos de 9 pontos;
 - A senha será considerada "Fraca" se somar 5 ou menos pontos.
 
-![Força de Senha](src/IMG/7lsH.gif)
+![Força de Senha](src/IMG/d18932db-c62f-499d-9277-e171a21209e5.gif)
